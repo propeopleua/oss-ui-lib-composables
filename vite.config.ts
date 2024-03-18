@@ -8,11 +8,11 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
   build: {
     lib: {
+      formats: ['es'],
       entry: {
         'use-form': resolve(__dirname, 'src', 'form', 'useForm.ts'),
         'use-list': resolve(__dirname, 'src', 'list', 'useList.ts'),
         'use-tmpl-refs': resolve(__dirname, 'src', 'tmpl', 'useTmplRefs.ts'),
-        'use-upside-down': resolve(__dirname, 'src', 'upside-down', 'useUpsideDown.ts'),
         'use-upside-down': resolve(__dirname, 'src', 'upside-down', 'useUpsideDown.ts'),
       },
       name: 'oss-composable',
