@@ -1,6 +1,6 @@
 import type { SortingState } from './SortingState';
 
-export interface FilterState {
+export default interface FilterState {
   query: string;
   sorting: SortingState;
   page: number;

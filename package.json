@@ -41,5 +41,19 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "vue": "^3.4.21"
+  },
+  "exports": {
+    "./useList": {
+      "import": "./src/list/useList.ts"
+    },
+    "./useForm": {
+      "import": "./src/form/useForm.ts"
+    },
+    "./useTmplRefs": {
+      "import": "./src/tmpl/useTmplRefs.ts"
+    },
+    "./useUpsideDown": {
+      "import": "./src/upside-down/useUpsideDown.ts"
+    }
   }
 }
