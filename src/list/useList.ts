@@ -1,4 +1,4 @@
-import { useForm } from '../form/useForm';
+import useForm from '../form/useForm';
 import { onMounted } from 'vue';
 import type { SortingState } from '../type/etc/SortingState';
 import type { FormInterface } from '../type/form/FormInterface';
