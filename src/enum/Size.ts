@@ -3,3 +3,5 @@ export enum Size {
   MEDIUM = 'medium',
   LARGE = 'large',
 }
+
+export default Size;

@@ -15,3 +15,5 @@ export interface FormInterface<S> {
   error: (name: string) => string | null;
   errors: unknown;
 }
+
+export default FormInterface<S>;
