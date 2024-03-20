@@ -57,8 +57,8 @@ export default function useForm<S = unknown>(props: FormProps<S>): FormInterface
     let topFieldName = '';
 
     const resolvedErrors = props.errorsResolver
-      ? props.errorsResolver(errors.value)
-      : Object.keys(errors.value);
+      ? props.errorsResolver(errors.value as unknown as Record<string, unknown>)
+      : Object.keys(errors.value as unknown as object);
 
     resolvedErrors.forEach((name: string) => {
       const fieldRef = get(inputRefs, name);
