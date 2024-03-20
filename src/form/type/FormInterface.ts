@@ -1,6 +1,6 @@
 import type { UnwrapRef } from 'vue';
 
-export interface FormInterface {
+export default interface FormInterface {
   submit(): void;
   /* eslint-disable-next-line */
   input(name: string): any;
@@ -15,5 +15,3 @@ export interface FormInterface {
   error: (name: string) => string | null;
   errors: unknown;
 }
-
-export default FormInterface;
