@@ -1,7 +1,9 @@
 import { reactive } from 'vue';
+import type { UnwrapNestedRefs } from 'vue';
+
 
 interface TmplRefsResult<T> {
-  tmplRefs: Record<keyof T, T>;
+  tmplRefs: UnwrapNestedRefs<T>;
   toTmplRef: (name: keyof T) => (el: any) => void;
 }
 
