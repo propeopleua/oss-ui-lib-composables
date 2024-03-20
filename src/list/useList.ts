@@ -11,7 +11,7 @@ interface Props<T> {
 }
 
 interface ListConfig<T> {
-  form: FormInterface<T>;
+  form: FormInterface;
   tableSortHandler: (params: SortingState) => void;
   pageChangeHandler: (newPage: number) => void;
 }
