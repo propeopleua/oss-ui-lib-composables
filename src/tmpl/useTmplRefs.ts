@@ -1,5 +1,10 @@
 import { reactive } from 'vue';
 
+interface TmplRefsResult<T> {
+  tmplRefs: Record<keyof T, T>;
+  toTmplRef: (name: keyof T) => (el: any) => void;
+}
+
 /**
  * Creates and manages template references in Vue 3 Composition API.
  *
