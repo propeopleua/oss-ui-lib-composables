@@ -4,3 +4,5 @@ export function scrollTo(top: number): void {
     behavior: 'smooth',
   });
 }
+
+export default scrollTo;

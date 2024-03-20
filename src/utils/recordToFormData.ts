@@ -1,4 +1,4 @@
-import { isNull } from 'lodash';
+import isNull from 'lodash-es/isNull';
 
 export default function recordToFormData(payload: Record<string, unknown>, path = '', fd = new FormData()) {
   return Object.entries(payload).reduce((data, [key, value]) => {

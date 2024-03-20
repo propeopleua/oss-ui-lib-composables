@@ -39,7 +39,8 @@
     "vite": "^5.1.5"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
+    "@types/lodash-es": "^4.17.12",
+    "lodash-es": "^4.17.21",
     "vue": "^3.4.21"
   },
   "exports": {
@@ -51,6 +52,12 @@
     },
     "./useTmplRefs": {
       "import": "./src/tmpl/useTmplRefs.ts"
+    },
+    "./utils/scrollTo": {
+      "import": "./src/utils/scrollTo.ts"
+    },
+    "./utils/recordToFormData": {
+      "import": "./src/utils/recordToFormData.ts"
     },
     "./useUpsideDown": {
       "import": "./src/upside-down/useUpsideDown.ts"

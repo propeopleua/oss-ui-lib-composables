@@ -1,10 +1,10 @@
-import type { FormInterface } from '../type/form/FormInterface';
-import get from 'lodash/get';
-import set from 'lodash/set';
-import isEqual from 'lodash/isEqual';
-import cloneDeep from 'lodash/cloneDeep';
+import type { FormInterface } from './type/FormInterface';
+import get from 'lodash-es/get';
+import set from 'lodash-es/set';
+import isEqual from 'lodash-es/isEqual';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { computed, reactive, Ref, ref, UnwrapRef, onUnmounted } from 'vue';
-import { scrollTo } from '../utils/dom';
+import scrollTo from '../utils/scrollTo';
 
 interface FormProps<T = Record<string, unknown>> {
   initialValues: T;
