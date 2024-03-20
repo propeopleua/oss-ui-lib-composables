@@ -1,13 +1,13 @@
 import type { UnwrapRef } from 'vue';
 
-export interface FormInterface<S> {
+export interface FormInterface {
   submit(): void;
   /* eslint-disable-next-line */
   input(name: string): any;
   inputChangeHandler: (newValue: unknown, name: string) => void;
   isValid: boolean;
   value: {
-    value: UnwrapRef<S>;
+    value: UnwrapRef<unknown>;
   };
   reset: () => void;
   setValues: (values: unknown) => void;
@@ -16,4 +16,4 @@ export interface FormInterface<S> {
   errors: unknown;
 }
 
-export default FormInterface<S>;
+export default FormInterface;

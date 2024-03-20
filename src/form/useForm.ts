@@ -3,7 +3,8 @@ import get from 'lodash-es/get';
 import set from 'lodash-es/set';
 import isEqual from 'lodash-es/isEqual';
 import cloneDeep from 'lodash-es/cloneDeep';
-import { computed, reactive, Ref, ref, UnwrapRef, onUnmounted } from 'vue';
+import { computed, reactive, ref, onUnmounted } from 'vue';
+import type { Ref, UnwrapRef } from 'vue';
 import scrollTo from '../utils/scrollTo';
 
 interface FormProps<T = Record<string, unknown>> {
@@ -19,7 +20,7 @@ interface FormProps<T = Record<string, unknown>> {
   detectChangesMsg?: string;
 }
 
-export default function useForm<S = unknown>(props: FormProps<S>): FormInterface<S> {
+export default function useForm<S = unknown>(props: FormProps<S>): FormInterface {
   const inputRefs: Record<string, Ref> = {};
   const value = reactive({ value: cloneDeep(props.initialValues), update: (new Date()).getTime() });
   const isSubmitted = ref<boolean>(false);
