@@ -10,10 +10,12 @@ export default defineConfig({
     lib: {
       formats: ['es'],
       entry: {
-        'use-form': resolve(__dirname, 'src', 'form', 'useForm.ts'),
-        'use-list': resolve(__dirname, 'src', 'list', 'useList.ts'),
-        'use-tmpl-refs': resolve(__dirname, 'src', 'tmpl', 'useTmplRefs.ts'),
-        'use-upside-down': resolve(__dirname, 'src', 'upside-down', 'useUpsideDown.ts'),
+        'useForm': resolve(__dirname, 'src', 'form', 'useForm.ts'),
+        'useList': resolve(__dirname, 'src', 'list', 'useList.ts'),
+        'useTmplRefs': resolve(__dirname, 'src', 'tmpl', 'useTmplRefs.ts'),
+        'useUpsideDown': resolve(__dirname, 'src', 'upside-down', 'useUpsideDown.ts'),
+        'scrollTo': resolve(__dirname, 'src', 'utils', 'scrollTo.ts'),
+        'recordToFormData': resolve(__dirname, 'src', 'utils', 'recordToFormData.ts'),
       },
       name: 'oss-composable',
       fileName: (format, entryName) => `${entryName}.${format}.js`,

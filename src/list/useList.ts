@@ -1,7 +1,7 @@
 import useForm from '../form/useForm';
 import { onMounted } from 'vue';
-import type { SortingState } from '../type/etc/SortingState';
-import type { FormInterface } from './type/FormInterface';
+import type { SortingState } from './type/SortingState';
+import type { FormInterface } from '../form/type/FormInterface';
 
 interface Props<T> {
   defaultValue: T;
