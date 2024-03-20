@@ -1,4 +1,4 @@
-import type { FormInterface } from './type/FormInterface';
+import type FormInterface from './type/FormInterface';
 import get from 'lodash-es/get';
 import set from 'lodash-es/set';
 import isEqual from 'lodash-es/isEqual';
@@ -30,9 +30,9 @@ export default function useForm<S = unknown>(props: FormProps<S>): FormInterface
       return responseErrors.value;
     }
 
-    return props.validate?.(value.value);
+    return props.validate?.(value.value as unknown as S);
   });
-  const isValid = computed(() => !Object.keys(errors.value).length);
+  const isValid = computed(() => !Object.keys(errors.value as unknown as object).length);
 
   const beforeUnloadHandler = (event: BeforeUnloadEvent) => {
     if (!isEqual(props.initialValues, value.value)) {
