@@ -16,6 +16,8 @@ export default defineConfig({
         'useUpsideDown': resolve(__dirname, 'src', 'upside-down', 'useUpsideDown.ts'),
         'scrollTo': resolve(__dirname, 'src', 'utils', 'scrollTo.ts'),
         'recordToFormData': resolve(__dirname, 'src', 'utils', 'recordToFormData.ts'),
+        'getCached': resolve(__dirname, 'src', 'services', 'cache', 'get-cached.ts'),
+        'dropCached': resolve(__dirname, 'src', 'services', 'cache', 'drop-cached.ts'),
       },
       name: 'oss-composable',
       fileName: (format, entryName) => `${entryName}.${format}.js`,
