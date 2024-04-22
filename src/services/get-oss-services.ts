@@ -1,4 +1,3 @@
-import type { ServiceMenuResponse } from '../type/http/responses/ServiceMenuResponse';
 import getCached from './cache/get-cached';
 
 type ServiceMenuItem = {
