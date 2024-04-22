@@ -1,4 +1,5 @@
-import { CachedItem, getCacheStore, getTimestamp, STORE_NAME, TTL_THRESHOLD } from './store';
+import { getCacheStore, getTimestamp, STORE_NAME, TTL_THRESHOLD } from './store';
+import type { CachedItem } from './store';
 
 export default async function getCached<T> (
   key: string,
