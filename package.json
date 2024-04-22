@@ -66,6 +66,9 @@
     "./services/cache/dropCached": {
       "import": "./src/services/cache/drop-cached.ts"
     },
+    "./services/getOssServices": {
+      "import": "./src/services/get-oss-services.ts"
+    },
     "./useUpsideDown": {
       "import": "./src/upside-down/useUpsideDown.ts"
     }
