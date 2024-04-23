@@ -3,7 +3,7 @@ import get from 'lodash-es/get';
 import set from 'lodash-es/set';
 import isEqual from 'lodash-es/isEqual';
 import cloneDeep from 'lodash-es/cloneDeep';
-import { computed, reactive, ref, onUnmounted } from 'vue';
+import { computed, reactive, ref, onUnmounted, onMounted } from 'vue'
 import type { Ref, UnwrapRef } from 'vue';
 import scrollTo from '../utils/scrollTo';
 
@@ -30,7 +30,7 @@ export default function useForm<S = unknown>(props: FormProps<S>): FormInterface
       return responseErrors.value;
     }
 
-    return props.validate?.(value.value as unknown as S);
+    return props.validate?.(value.value as unknown as S) || {};
   });
   const isValid = computed(() => !Object.keys(errors.value as unknown as object).length);
 
@@ -40,13 +40,15 @@ export default function useForm<S = unknown>(props: FormProps<S>): FormInterface
     }
   };
 
-  if (props.detectChangesMsg) {
-    window.addEventListener('beforeunload', beforeUnloadHandler);
+  onMounted(() => {
+    if (props.detectChangesMsg) {
+      window.addEventListener('beforeunload', beforeUnloadHandler);
+    }
+  });
 
-    onUnmounted(() => {
-      window.removeEventListener('beforeunload', beforeUnloadHandler);
-    });
-  }
+  onUnmounted(() => {
+    window.removeEventListener('beforeunload', beforeUnloadHandler);
+  });
 
   const scrollToFirstError = () => {
     if (!props.scrollToFirstError) {
