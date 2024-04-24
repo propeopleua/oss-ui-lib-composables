@@ -51,6 +51,9 @@
     "./useForm": {
       "import": "./src/form/useForm.ts"
     },
+    "./useFormV2": {
+      "import": "./src/form/useFormV2.ts"
+    },
     "./useTmplRefs": {
       "import": "./src/tmpl/useTmplRefs.ts"
     },
