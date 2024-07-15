@@ -4,9 +4,9 @@ import { createPopper, type Placement, type Instance } from '@popperjs/core';
 
 interface Props {
   // eslint-disable-next-line no-undef
-  triggerRef: Ref<HTMLElement>;
+  triggerRef: () => Ref<HTMLElement>;
   // eslint-disable-next-line no-undef
-  popupRef: Ref<HTMLElement>;
+  popupRef: () => Ref<HTMLElement>;
   placement: Placement;
   offset?: {
     x: number;
@@ -18,7 +18,7 @@ export default function usePopper(props: Props) {
   const popper = ref<Instance | null>(null);
 
   onMounted(() => {
-    popper.value = createPopper(props.triggerRef.value, props.popupRef.value, {
+    popper.value = createPopper(props.triggerRef().value, props.popupRef().value, {
       placement: props.placement,
       modifiers: props.offset
         ? [
